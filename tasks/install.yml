@@ -1,0 +1,36 @@
+---
+
+- name: Assertions
+  ansible.builtin.assert:
+    that:
+      - mattermost_docker_data is defined
+
+- name: Create location to export files to docker container from
+  ansible.builtin.file:
+    path: "{{ mattermost_docker_data }}"
+    state: directory
+    owner: root
+    group: "{{ mattermost_docker_group | default('root') }}"
+    mode: "0750"
+
+- name: Configure nginx-in-docker
+  ansible.builtin.include_tasks: install-nginx-docker.yml
+  when: mattermost_nginx_docker | bool
+
+- name: Configure nginx-standalone
+  ansible.builtin.include_tasks: install-nginx.yml
+  when: not mattermost_nginx_docker | bool
+
+- name: Create mattermost/nginx configuration files
+  ansible.builtin.template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode | default('0644') }}"
+  loop:
+    - src: templates/docker-compose.yml.j2
+      dest: "{{ mattermost_docker_data }}/docker-compose.yml"
+    - src: templates/env.j2
+      dest: "{{ mattermost_docker_data }}/.env"
+    - src: templates/php.ini.j2
+      dest: "{{ mattermost_docker_data }}/php.ini"
+  notify: Restart docker

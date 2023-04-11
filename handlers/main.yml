@@ -1,0 +1,12 @@
+---
+
+- name: Restart docker
+  community.docker.docker_compose:
+    project_src: "{{ mattermost_docker_data }}"
+    build: false
+    restarted: true
+
+- name: Restart nginx
+  ansible.builtin.service:
+    name: nginx
+    state: restarted

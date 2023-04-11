@@ -1,0 +1,9 @@
+---
+
+- name: Assertions
+  ansible.builtin.assert:
+    that:
+      - mattermost_docker_data is defined
+
+- name: Install mattermost
+  ansible.builtin.include_tasks: install.yml
