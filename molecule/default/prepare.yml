@@ -40,8 +40,8 @@
       - almalinux9
     systemctl_alternative: False
   roles:
-    - deitkrachten.showinfo
     - deitkrachten.facts
+    - deitkrachten.showinfo
   tasks:
 
     - name: Create remote_tmp

@@ -44,8 +44,11 @@ Note:
 ## Role Variables
 ### defaults/main.yml
 <pre><code>
-# Wordpress FQDN
+# Mattermost FQDN
 mattermost_fqdn: mm.example.com
+
+# Mattermost domain
+mattermost_domain: example.com
 
 # Retrieve SSL certificate from let's encrypt
 mattermost_certbot: true
@@ -59,6 +62,11 @@ mattermost_nginx_docker: true
 
 # Max upload size
 mattermost_max_upload_size: 100M
+
+# Exposed ports to the host
+mattermost_httts_port: 443
+mattermost_httt_port: 80
+mattermost_calls_port: 8443
 </pre></code>
 
 
