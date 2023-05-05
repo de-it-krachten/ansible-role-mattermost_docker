@@ -85,7 +85,6 @@ mattermost_max_upload_size: 100M
     letsencrypt_domain: "{{ mattermost_domain }}"
     letsencrypt_domains: "{{ [ mattermost_domain ] }}"
   roles:
-    - deitkrachten.showinfo
     - deitkrachten.openssl
   tasks:
     - name: Include role 'mattermost_docker'
