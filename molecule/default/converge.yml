@@ -1,0 +1,25 @@
+---
+
+- name: Converge
+  hosts: all
+  become: "yes"
+  vars:
+    mysql_root_password: mattermost
+    mysql_user: mattermost
+    mysql_password: mattermost
+    mysql_database: mattermost
+    mattermost_certbot: False
+    mattermost_domain: example.com
+    mattermost_docker_data: /export/docker/mattermost
+    mattermost_db_name: mattermost
+    mattermost_db_user: mattermost
+    mattermost_db_pwd: mattermost
+    letsencrypt_email: "info@{{ mattermost_domain }}"
+    letsencrypt_domain: "{{ mattermost_domain }}"
+    letsencrypt_domains: "{{ [ mattermost_domain ] }}"
+  roles:
+    - deitkrachten.openssl
+  tasks:
+    - name: Include role 'ansible-role-mattermost_docker'
+      ansible.builtin.include_role:
+        name: ansible-role-mattermost_docker

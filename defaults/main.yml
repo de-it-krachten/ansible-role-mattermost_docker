@@ -1,0 +1,25 @@
+---
+
+# Mattermost FQDN
+mattermost_fqdn: mm.example.com
+
+# Mattermost domain
+mattermost_domain: example.com
+
+# Retrieve SSL certificate from let's encrypt
+mattermost_certbot: true
+
+# Run nginx in docker
+mattermost_nginx_docker: true
+
+# Custom SSL certificate
+# mattermost_ssl_key: /path/to/key
+# mattermost_ssl_certificate_chain: /path/to/certificate/chain
+
+# Max upload size
+mattermost_max_upload_size: 100M
+
+# Exposed ports to the host
+mattermost_httts_port: 443
+mattermost_httt_port: 80
+mattermost_calls_port: 8443

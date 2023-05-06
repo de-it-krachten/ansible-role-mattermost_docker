@@ -1,0 +1,105 @@
+---
+
+# Generic
+generic:
+  role: ansible-role-mattermost_docker
+  role_short: mattermost_docker
+  role_description: |
+    Sets up Mattermost using Docker.<br>
+    https://mattermost.com<br>
+
+# Supported platforms
+platforms:
+  rhel7:
+    ci: false
+    supported: false
+  rhel8:
+    ci: false
+    supported: true
+  rhel9:
+    ci: false
+    supported: true
+  centos7:
+    ci: false
+    supported: false
+  centos8:
+    ci: false
+    supported: false
+  centos8s:
+    ci: false
+    supported: false
+  centos9s:
+    ci: false
+    supported: false
+  rockylinux8:
+    ci: false
+    supported: true
+  rockylinux9:
+    ci: false
+    supported: true
+  oraclelinux8:
+    ci: false
+    supported: true
+  oraclelinux9:
+    ci: false
+    supported: true
+  almalinux8:
+    ci: false
+    supported: true
+  almalinux9:
+    ci: false
+    supported: true
+  debian10:
+    ci: false
+    supported: true
+  debian11:
+    ci: false
+    supported: true
+  ubuntu1804:
+    ci: false
+    supported: true
+  ubuntu2004:
+    ci: false
+    supported: true
+  ubuntu2204:
+    ci: false
+    supported: true
+  fedora36:
+    ci: false
+    supported: true
+  fedora37:
+    ci: false
+    supported: true
+  alpine3:
+    ci: false
+    supported: true
+  docker:
+    ci: true
+    supported: true
+
+# Molecule
+molecule:
+  requirements:
+    roles_extra:
+      - deitkrachten.openssl
+      - deitkrachten.python
+  converge:
+    roles:
+      - deitkrachten.openssl
+    vars:
+      # Mysql
+      mysql_root_password: mattermost
+      mysql_user: mattermost
+      mysql_password: mattermost
+      mysql_database: mattermost
+      # Wordpress
+      mattermost_certbot: false
+      mattermost_domain: example.com
+      mattermost_docker_data: /export/docker/mattermost
+      mattermost_db_name: mattermost
+      mattermost_db_user: mattermost
+      mattermost_db_pwd: mattermost
+      # Let's encrypt
+      letsencrypt_email: info@{{ mattermost_domain }}
+      letsencrypt_domain: "{{ mattermost_domain }}"
+      letsencrypt_domains: "{{ [ mattermost_domain ] }}"

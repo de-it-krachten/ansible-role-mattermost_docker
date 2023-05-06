@@ -1,0 +1,4 @@
+molecule/default/molecule.yml
+*.bak
+.converted
+defaults/defaults-*
