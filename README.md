@@ -14,7 +14,7 @@ https://mattermost.com<br>
 None
 
 #### Collections
-- community.general
+- community.docker
 
 ## Platforms
 
@@ -36,8 +36,9 @@ Supported platforms
 - Ubuntu 18.04 LTS<sup>1</sup>
 - Ubuntu 20.04 LTS<sup>1</sup>
 - Ubuntu 22.04 LTS<sup>1</sup>
-- Fedora 37<sup>1</sup>
-- Fedora 38<sup>1</sup>
+- Ubuntu 24.04 LTS
+- Fedora 39<sup>1</sup>
+- Fedora 40<sup>1</sup>
 - Alpine 3<sup>1</sup>
 - Docker dind (CI only)
 
@@ -80,21 +81,21 @@ mattermost_calls_port: 8443
 <pre><code>
 - name: sample playbook for role 'mattermost_docker'
   hosts: all
-  become: "yes"
+  become: 'yes'
   vars:
     mysql_root_password: mattermost
     mysql_user: mattermost
     mysql_password: mattermost
     mysql_database: mattermost
-    mattermost_certbot: False
+    mattermost_certbot: false
     mattermost_domain: example.com
     mattermost_docker_data: /export/docker/mattermost
     mattermost_db_name: mattermost
     mattermost_db_user: mattermost
     mattermost_db_pwd: mattermost
-    letsencrypt_email: "info@{{ mattermost_domain }}"
-    letsencrypt_domain: "{{ mattermost_domain }}"
-    letsencrypt_domains: "{{ [ mattermost_domain ] }}"
+    letsencrypt_email: info@{{ mattermost_domain }}
+    letsencrypt_domain: '{{ mattermost_domain }}'
+    letsencrypt_domains: '{{ [ mattermost_domain ] }}'
   roles:
     - deitkrachten.openssl
   tasks:
