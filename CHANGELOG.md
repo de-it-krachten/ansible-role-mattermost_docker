@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/de-it-krachten/ansible-role-mattermost_docker/compare/v1.1.0...v1.2.0) (2024-12-29)
+
+
+### Features
+
+* Update supported platforms & CI ([a0f16f7](https://github.com/de-it-krachten/ansible-role-mattermost_docker/commit/a0f16f72ada609f5d372343183f785ba0428e32e))
+
 # [1.1.0](https://github.com/de-it-krachten/ansible-role-mattermost_docker/compare/v1.0.0...v1.1.0) (2024-06-04)
 
 
