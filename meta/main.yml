@@ -13,6 +13,7 @@ galaxy_info:
       versions:
         - '8'
         - '9'
+        - '10'
     - name: opensuse
       versions:
         - all
@@ -21,6 +22,7 @@ galaxy_info:
         - buster
         - bullseye
         - bookworm
+        - trixie
     - name: Ubuntu
       versions:
         - bionic
