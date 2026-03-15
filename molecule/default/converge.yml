@@ -4,6 +4,7 @@
   hosts: all
   become: "yes"
   vars:
+    molecule_driver: "{{ lookup('env', 'MOLECULE_DRIVER_NAME') }}"
     mysql_root_password: mattermost
     mysql_user: mattermost
     mysql_password: mattermost
