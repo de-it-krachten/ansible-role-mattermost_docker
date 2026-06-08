@@ -15,7 +15,7 @@
     mattermost_db_name: mattermost
     mattermost_db_user: mattermost
     mattermost_db_pwd: mattermost
-    letsencrypt_email: "info@{{ mattermost_domain }}"
+    letsencrypt_email: info@{{ mattermost_domain }}
     letsencrypt_domain: "{{ mattermost_domain }}"
     letsencrypt_domains: "{{ [ mattermost_domain ] }}"
   roles:
