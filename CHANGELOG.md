@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/de-it-krachten/ansible-role-mattermost_docker/compare/v1.4.0...v1.5.0) (2026-07-26)
+
+
+### Features
+
+* Added support for Fedora 44 ([27fd6a7](https://github.com/de-it-krachten/ansible-role-mattermost_docker/commit/27fd6a70038f23025922feb333ee381117df3fe7))
+* Added support for Ubuntu 26.04 LTS ([97b70f9](https://github.com/de-it-krachten/ansible-role-mattermost_docker/commit/97b70f9ff77a18a135858da4e978d228a041bbe2))
+* Drop support for Fedora 42 ([defbd33](https://github.com/de-it-krachten/ansible-role-mattermost_docker/commit/defbd33ce9fc463ab26166ae47af68226e2cf06f))
+
 # [1.4.0](https://github.com/de-it-krachten/ansible-role-mattermost_docker/compare/v1.3.0...v1.4.0) (2026-03-15)
 
 
