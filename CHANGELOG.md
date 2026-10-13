@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/de-it-krachten/ansible-role-mattermost_docker/compare/v1.5.0...v1.6.0) (2026-10-13)
+
+
+### Features
+
+* Drop support for Debian 11 (Bullseye) ([9f2cf33](https://github.com/de-it-krachten/ansible-role-mattermost_docker/commit/9f2cf332eaa5d35eaf2f0b94b8e1dedc80f71184))
+
 # [1.5.0](https://github.com/de-it-krachten/ansible-role-mattermost_docker/compare/v1.4.0...v1.5.0) (2026-07-26)
 
 
